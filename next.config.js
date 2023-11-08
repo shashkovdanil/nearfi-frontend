@@ -8,6 +8,7 @@ const nextConfig = {
   },
   rewrites: async () => [
   ],
+  distDir: 'dist',
 };
 
 module.exports = nextConfig;

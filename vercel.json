@@ -1,3 +1,4 @@
 {
-  "alias": "near-fi"
+  "alias": "near-fi",
+  "outputDirectory": "dist"
 }
