@@ -13,7 +13,7 @@ const martianMono = Martian_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   description: 'Secure, fast, and easy blockchain-based lending',
-  title: 'CoreFi',
+  title: 'NearFi',
 }
 
 export const viewport: Viewport = {

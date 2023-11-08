@@ -175,7 +175,7 @@ export default function Deposits() {
               <span className="font-meduim text-black dark:text-white">
                 {formatCoreTokens(profit!)}
               </span>{' '}
-              CORE
+              ETH
             </CardDescription>
             <Button isLoading={isClaimLoading} onClick={onClaimProfit}>
               Claim
@@ -188,7 +188,7 @@ export default function Deposits() {
               <span className="font-meduim text-black dark:text-white">
                 {formatUsdt(maxToWithdraw!)}
               </span>{' '}
-              USDT to our service.
+              USDC to our service.
             </CardDescription>
             <Form {...form}>
               <form
@@ -203,7 +203,7 @@ export default function Deposits() {
                       <FormControl>
                         <Input
                           autoComplete="off"
-                          placeholder="1000 USDT"
+                          placeholder="1000 USDC"
                           type="number"
                           {...field}
                         />
@@ -247,7 +247,7 @@ export default function Deposits() {
               deposits.length > 0 &&
               deposits.toReversed().map(deposit => (
                 <TableRow key={deposit.timestamp.toString()}>
-                  <TableCell>{formatUsdt(deposit.amount)} USDT</TableCell>
+                  <TableCell>{formatUsdt(deposit.amount)} USDC</TableCell>
                   <TableCell>{formatTimestamp(deposit.timestamp)}</TableCell>
                 </TableRow>
               ))}

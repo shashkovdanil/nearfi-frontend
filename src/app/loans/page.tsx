@@ -74,19 +74,19 @@ export default function Loans() {
             <TableRow key={loan.nonce.toString()}>
               <TableCell>
                 <span className="whitespace-nowrap">
-                  {formatUsdt(loan.loanSize)} USDT
+                  {formatUsdt(loan.loanSize)} USDC
                 </span>
               </TableCell>
               <TableCell>
                 <span className="whitespace-nowrap">
-                  {formatCoreTokens(loan.collateral)} CORE
+                  {formatCoreTokens(loan.collateral)} ETH
                 </span>
               </TableCell>
               <TableCell>
                 {(
                   Number(loan.loanSize) /
                   1e6 /
-                  ((Number(loan.collateral) / 1e18) * course.coredaoorg.usd)
+                  ((Number(loan.collateral) / 1e18) * course.ethereum.usd)
                 ).toFixed(2)}
                 %
               </TableCell>

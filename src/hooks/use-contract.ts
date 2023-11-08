@@ -11,6 +11,7 @@ export function useContract() {
     abi,
     address: coreFiContractAddress,
     functionName: 'borrow',
+    gas: BigInt(1000000),
   })
   const { writeAsync: approve } = useContractWrite({
     abi: erc20ABI,
