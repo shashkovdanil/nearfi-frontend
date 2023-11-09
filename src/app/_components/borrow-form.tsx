@@ -80,7 +80,7 @@ export function BorrowForm() {
         <CardDescription>
           Secure a{' '}
           <span className="font-medium text-black dark:text-white">30-day</span>{' '}
-          USDC loan using your Core tokens as collateral. Just enter the amount,
+          USDC loan using your Ethereum as collateral. Just enter the amount,
           adjust the collateral ratio, and confirm. Quick, seamless, and
           automated.
           <br />
