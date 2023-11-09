@@ -23,6 +23,7 @@ export function PaybackButton({ amount, nonce }: Props) {
   const { writeAsync: payBack } = useContractWrite({
     ...contract,
     functionName: 'repayBorrow',
+    gas: BigInt(1000000),
   })
 
   const payback = () => {
