@@ -44,7 +44,7 @@ export function BorrowForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     defaultValues: {
       amount: '',
-      ratio: [1.5],
+      ratio: [0.1],
     },
     resolver: zodResolver(FormSchema),
   })
@@ -136,7 +136,7 @@ export function BorrowForm() {
                     <Slider
                       {...field}
                       max={3}
-                      min={1.5}
+                      min={0.1}
                       onValueChange={value => {
                         field.onChange(value)
                       }}

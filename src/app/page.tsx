@@ -3,16 +3,14 @@
 import { BorrowForm } from '@/app/_components/borrow-form'
 import { LendForm } from '@/app/_components/lend-form'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { VmComponent } from '@/components/vm/VmComponent'
 import { abi, coreFiContractAddress } from '@/lib/const'
 import { formatUsdt } from '@/lib/utils'
-import { useVmStore } from '@/stores/vm'
 import { useEffect, useState } from 'react'
 import { useContractRead } from 'wagmi'
-import { Widget } from 'near-social-vm'
 
 export default function Home() {
   const [pool, setPool] = useState(BigInt(0))
-  // const { EthersProvider, ethersContext, Widget } = useVmStore()
 
   const { data = BigInt(0) } = useContractRead({
     abi,
@@ -42,13 +40,8 @@ export default function Home() {
           <BorrowForm />
         </TabsContent>
       </Tabs>
-      <div style={{ backgroundColor: 'red' }} className="test">
-        <Widget
-          src="danilshashkov1.testnet/widget/Test2"
-          config={{
-            redirectMap: 'danilshashkov1.testnet/widget/Test2',
-          }}
-        />
+      <div className="test" style={{ backgroundColor: 'red' }}>
+        <VmComponent src="danilshashkov1.testnet/widget/Test2"></VmComponent>
       </div>
     </>
   )

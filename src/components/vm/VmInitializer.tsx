@@ -1,27 +1,23 @@
 'use client'
 
-import { setupWalletSelector } from '@near-wallet-selector/core'
-
 import type { WalletSelectorModal } from '@near-wallet-selector/modal-ui'
+
+import { useEthersProviderContext } from '@/data/web3'
+import { setupWalletSelector } from '@near-wallet-selector/core'
 import { setupModal } from '@near-wallet-selector/modal-ui'
-
 import { setupNearWallet } from '@near-wallet-selector/near-wallet'
-
 import Big from 'big.js'
 import {
   CommitButton,
   EthersProviderContext,
+  Widget,
   useAccount,
   useCache,
   useInitNear,
   useNear,
   utils,
-  Widget,
 } from 'near-social-vm'
-
 import React, { useCallback, useEffect, useState } from 'react'
-
-import { useEthersProviderContext } from '@/data/web3'
 // import { useSignInRedirect } from '@/hooks/useSignInRedirect'
 
 // import { useAuthStore } from '@/stores/auth'
@@ -134,11 +130,11 @@ export default function VmInitializer() {
 
   useEffect(() => {
     setVmStore({
-      cache,
       CommitButton,
-      ethersContext: ethersProviderContext,
       EthersProvider: EthersProviderContext.Provider,
       Widget,
+      cache,
+      ethersContext: ethersProviderContext,
       near,
     })
   }, [cache, ethersProviderContext, setVmStore, near])

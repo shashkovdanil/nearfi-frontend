@@ -1,24 +1,24 @@
-import { create } from 'zustand';
+import { create } from 'zustand'
 
 type VmState = {
-  cache: any;
-  CommitButton: any;
-  ethersContext: any;
-  EthersProvider: any;
-  Widget: any;
-  near: any;
-};
+  CommitButton: any
+  EthersProvider: any
+  Widget: any
+  cache: any
+  ethersContext: any
+  near: any
+}
 
 type VmStore = VmState & {
-  set: (update: VmState) => void;
-};
+  set: (update: VmState) => void
+}
 
-export const useVmStore = create<VmStore>((set) => ({
-  cache: null,
+export const useVmStore = create<VmStore>(set => ({
   CommitButton: null,
-  ethersContext: null,
   EthersProvider: null,
   Widget: null,
+  cache: null,
+  ethersContext: null,
   near: null,
-  set: (params) => set(() => ({ ...params })),
-}));
+  set: params => set(() => ({ ...params })),
+}))
