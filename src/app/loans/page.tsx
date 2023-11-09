@@ -87,7 +87,7 @@ export default function Loans() {
                   Number(loan.loanSize) /
                   1e6 /
                   ((Number(loan.collateral) / 1e18) * course.ethereum.usd)
-                ).toFixed(2)}
+                ).toFixed(7)}
                 %
               </TableCell>
               <TableCell>{loan.payedBack ? 'Yes' : 'No'}</TableCell>

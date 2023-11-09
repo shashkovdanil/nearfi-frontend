@@ -30,7 +30,7 @@ export function formatTimestamp(ts: BigInt) {
 }
 
 export function formatCoreTokens(amount: BigInt) {
-  return (Number(amount) / 1e18).toFixed(2)
+  return (Number(amount) / 1e18).toFixed(7)
 }
 
 export function formatUsdt(amount: BigInt) {
