@@ -35,10 +35,6 @@ const FormSchema = z.object({
   ratio: z.array(z.number()),
 })
 
-type Props = {
-  coingeckoPromise: Promise<{ coredaoorg: { usd: number } }>
-}
-
 export function BorrowForm() {
   const course = useCoreTokenPrice()
   const { address, open } = useWalletConnect()
@@ -67,13 +63,13 @@ export function BorrowForm() {
         await borrow({
           args: [BigInt(2592000), BigInt(amount * 1000000)],
           value: BigInt(
-            Math.floor(amount * ratio * (1 / course.coredaoorg.usd) * 1e18),
+            Math.floor(amount * ratio * (1 / course.ethereum.usd) * 1e18),
           ),
         })
 
         form.reset()
       },
-      successMessage: `Your loan request has been successfully processed! You are borrowing ${amount} USDT with a collateral ratio of ${ratio}.`,
+      successMessage: `Your loan request has been successfully processed! You are borrowing ${amount} USDC with a collateral ratio of ${ratio}.`,
     })
   }
 
@@ -84,16 +80,16 @@ export function BorrowForm() {
         <CardDescription>
           Secure a{' '}
           <span className="font-medium text-black dark:text-white">30-day</span>{' '}
-          USDT loan using your Core tokens as collateral. Just enter the amount,
+          USDC loan using your Core tokens as collateral. Just enter the amount,
           adjust the collateral ratio, and confirm. Quick, seamless, and
           automated.
           <br />
           <br />
-          Core token (CORE) is currently priced at{' '}
+          Eth (ETH) is currently priced at{' '}
           <span className="font-medium text-black dark:text-white">
-            {course.coredaoorg.usd.toFixed(2)}
+            {course.ethereum.usd.toFixed(2)}
           </span>{' '}
-          USDT.
+          USDC.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -108,7 +104,7 @@ export function BorrowForm() {
                   <FormControl>
                     <Input
                       autoComplete="off"
-                      placeholder="1000 USDT"
+                      placeholder="1000 USDC"
                       type="number"
                       {...field}
                     />
@@ -119,11 +115,11 @@ export function BorrowForm() {
                       {(
                         Number(field.value) *
                         Number(form.watch('ratio')) *
-                        (1 / course.coredaoorg.usd)
-                      ).toFixed(2)}
+                        (1 / course.ethereum.usd)
+                      ).toFixed(7)}
                     </span>{' '}
-                    CORE (Core token price is not updated automatically, the
-                    final collateral amount may vary)
+                    ETH (Eth price is not updated automatically, the final
+                    collateral amount may vary)
                   </FormDescription>
                   <FormMessage />
                 </FormItem>

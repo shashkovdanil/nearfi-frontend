@@ -65,7 +65,7 @@ export function LendForm() {
 
         form.reset()
       },
-      successMessage: `Your transaction has been successfully completed! You have lent out ${data.amount} USDT.`,
+      successMessage: `Your transaction has been successfully completed! You have lent out ${data.amount} USDC.`,
     })
   }
 
@@ -74,8 +74,8 @@ export function LendForm() {
       <CardHeader>
         <CardTitle>Lend</CardTitle>
         <CardDescription>
-          Lend out your USDT and earn competitive returns. Simply input the
-          amount you wish to lend and hit Submit button. Your USDT will be
+          Lend out your USDC and earn competitive returns. Simply input the
+          amount you wish to lend and hit Submit button. Your USDC will be
           loaned out securely, and you&apos;ll receive your returns
           automatically.
         </CardDescription>
@@ -92,7 +92,7 @@ export function LendForm() {
                   <FormControl>
                     <Input
                       autoComplete="off"
-                      placeholder="1000 USDT"
+                      placeholder="1000 USDC"
                       type="number"
                       {...field}
                     />

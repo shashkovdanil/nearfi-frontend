@@ -15,7 +15,7 @@ export function Header() {
     <header className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 md:h-24 md:flex-row">
       <div>
         <Link href="/">
-          <div className="text-4xl font-black">CoreFi</div>
+          <div className="text-4xl font-black">NearFi</div>
         </Link>
       </div>
       <nav className="flex flex-wrap items-center gap-4">
