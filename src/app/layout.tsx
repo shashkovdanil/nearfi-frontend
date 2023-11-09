@@ -5,9 +5,14 @@ import { Header } from '@/components/header'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
 import { WagmiConfig } from '@/components/wagmi-config'
+import dynamic from 'next/dynamic'
 import { Martian_Mono } from 'next/font/google'
 
 import './globals.css'
+
+const VmInitializer = dynamic(() => import('../components/vm/VmInitializer'), {
+  ssr: false,
+})
 
 const martianMono = Martian_Mono({ subsets: ['latin'] })
 
@@ -27,6 +32,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={martianMono.className}>
+        <VmInitializer />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
