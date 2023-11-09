@@ -10,10 +10,6 @@ import { Martian_Mono } from 'next/font/google'
 
 import './globals.css'
 
-const VmInitializer = dynamic(() => import('../components/vm/VmInitializer'), {
-  ssr: false,
-})
-
 const martianMono = Martian_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -32,7 +28,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={martianMono.className}>
-        <VmInitializer />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

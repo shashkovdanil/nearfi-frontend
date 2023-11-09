@@ -3,7 +3,6 @@
 import { BorrowForm } from '@/app/_components/borrow-form'
 import { LendForm } from '@/app/_components/lend-form'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { VmComponent } from '@/components/vm/VmComponent'
 import { abi, coreFiContractAddress } from '@/lib/const'
 import { formatUsdt } from '@/lib/utils'
 import { useEffect, useState } from 'react'
@@ -40,9 +39,6 @@ export default function Home() {
           <BorrowForm />
         </TabsContent>
       </Tabs>
-      <div className="test" style={{ backgroundColor: 'red' }}>
-        <VmComponent src="danilshashkov1.testnet/widget/Test2"></VmComponent>
-      </div>
     </>
   )
 }
